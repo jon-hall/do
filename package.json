@@ -1,0 +1,24 @@
+{
+  "name": "do",
+  "version": "0.0.0",
+  "description": "does",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jon-hall/do.git"
+  },
+  "keywords": [
+    "do",
+    "does",
+    "doing"
+  ],
+  "author": "Jon Hall <jon_hall@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jon-hall/do/issues"
+  },
+  "homepage": "https://github.com/jon-hall/do#readme"
+}
