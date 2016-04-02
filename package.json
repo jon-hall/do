@@ -1,24 +1,38 @@
 {
-  "name": "do",
+  "name": "wafl",
   "version": "0.0.0",
-  "description": "does",
+  "description": "workflow runner",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d lib",
+    "test": "babel-node node_modules/cucumber/bin/cucumber.js -r test/step_definitions -r test/support test/features",
+    "dev": "nodemon --watch test --watch src --exec npm test --ext js,feature,json -- test/features"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jon-hall/do.git"
+    "url": "git+https://github.com/jon-hall/wafl.git"
   },
   "keywords": [
-    "do",
-    "does",
-    "doing"
+    "work flow",
+    "flow",
+    "workflow",
+    "process",
+    "runner",
+    "task"
   ],
   "author": "Jon Hall <jon_hall@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jon-hall/do/issues"
+    "url": "https://github.com/jon-hall/wafl/issues"
   },
-  "homepage": "https://github.com/jon-hall/do#readme"
+  "homepage": "https://github.com/jon-hall/wafl#readme",
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-plugin-add-module-exports": "github:jon-hall/babel-plugin-add-module-exports",
+    "babel-preset-es2015-node4": "^2.1.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "cucumber": "^0.10.1",
+    "nodemon": "^1.9.1"
+  }
 }
