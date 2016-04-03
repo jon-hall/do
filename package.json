@@ -6,7 +6,9 @@
   "scripts": {
     "build": "babel src -d lib",
     "test": "babel-node node_modules/cucumber/bin/cucumber.js -r test/step_definitions -r test/support test/features",
-    "dev": "nodemon --watch test --watch src --exec npm test --ext js,feature,json -- test/features"
+    "dev": "nodemon --watch test --watch src --exec npm test --ext js,feature,json -- test/features",
+    "lint": "eslint src/**/*.js test/**/*.js",
+    "preversion": "npm run lint && npm test && npm run build"
   },
   "repository": {
     "type": "git",
@@ -28,11 +30,13 @@
   "homepage": "https://github.com/jon-hall/wafl#readme",
   "devDependencies": {
     "babel-cli": "^6.6.5",
+    "babel-eslint": "^6.0.2",
     "babel-plugin-add-module-exports": "github:jon-hall/babel-plugin-add-module-exports",
     "babel-preset-es2015-node4": "^2.1.0",
     "babel-preset-stage-0": "^6.5.0",
     "chai": "^3.5.0",
     "cucumber": "^0.10.1",
+    "eslint": "^2.6.0",
     "nodemon": "^1.9.1"
   }
 }

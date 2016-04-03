@@ -5,4 +5,4 @@ export default function() {
     this.wafl = wafl;
     this.MockRunner = MockRunner;
     this.expect = require('chai').expect;
-};
+}

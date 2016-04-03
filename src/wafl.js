@@ -1,6 +1,6 @@
 export default function(runner) {
     return new Wafl(runner);
-};
+}
 
 class Wafl {
     constructor(runner) {

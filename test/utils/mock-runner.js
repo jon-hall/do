@@ -18,4 +18,4 @@ export default class MockRunner extends RunnerBase {
 
         this.current = this.prompts.shift();
     }
-};
+}

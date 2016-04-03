@@ -9,4 +9,4 @@ export default function() {
     this.After(function(scenario, callback) {
         callback();
     });
-};
+}

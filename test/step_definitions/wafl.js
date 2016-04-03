@@ -26,4 +26,4 @@ export default function() {
         self.expect(self.runner.state[key]).to.equal(output);
         callback();
     });
-};
+}
