@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src -d lib",
     "test": "babel-node node_modules/cucumber/bin/cucumber.js -r test/step_definitions -r test/support test/features",
-    "dev": "nodemon --watch test --watch src --exec npm test --ext js,feature,json -- test/features",
+    "dev": "nodemon --watch test --watch src --exec \"npm test && npm run lint\" --ext js,feature,json -- test/features",
     "lint": "eslint src/**/*.js test/**/*.js",
     "preversion": "npm run lint && npm test && npm run build"
   },
