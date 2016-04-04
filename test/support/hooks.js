@@ -1,12 +1,10 @@
 export default function() {
-    const self = this;
-
-    this.Before(function(scenario, callback) {
-        self.runner = new self.MockRunner();
+    this.Before((scenario, callback) => {
+        this.runner = new this.MockRunner();
         callback();
     });
 
-    this.After(function(scenario, callback) {
+    this.After((scenario, callback) => {
         callback();
     });
 }
