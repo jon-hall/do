@@ -1,8 +1,7 @@
-import wafl from '../../src/wafl.js';
-import MockRunner from '../utils/mock-runner.js';
+import { expect } from 'chai';
+import { run } from '../../src/wafl.js';
 
 export default function() {
-    this.wafl = wafl;
-    this.MockRunner = MockRunner;
-    this.expect = require('chai').expect;
+    this.run = run;
+    this.expect = expect;
 }
