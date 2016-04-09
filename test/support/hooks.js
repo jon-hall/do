@@ -1,10 +1,12 @@
 export default function() {
-    this.Before((scenario, callback) => {
+    /*eslint-disable no-unused-vars*/
+    this.Before((scenario) => {
         this.flows = [];
-        callback();
+        this.plugins_unregisters = [];
     });
 
-    this.After((scenario, callback) => {
-        callback();
+    this.After((scenario) => {
+        this.plugins_unregisters.forEach(unregister => unregister());
     });
+    /*eslint-enable no-unused-vars*/
 }
