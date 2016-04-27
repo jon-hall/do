@@ -6,10 +6,11 @@ export default function() {
     });
 
     this.When(/^we have a step which sets state to "([^"]*)"$/, (state) => {
-        /*eslint-disable no-unused-vars*/
         // A simple step which assigns the specified properties onto state
-        this.flows.push(s => eval(`for(let prop in ${state}) { s[prop] = (${state})[prop]; }`));
-        /*eslint-enable no-unused-vars*/
+        // Uses eval, rather than JSON.parse, so we don't have to write JSON in specs
+        let parsed;
+        eval(`parsed = ${state}`);
+        this.flows.push(s => Object.assign(s, parsed));
     });
 
     this.When(/^we have a step which restores to point "([^"]*)"$/, (restore_point) => {
